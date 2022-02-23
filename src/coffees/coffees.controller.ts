@@ -25,6 +25,9 @@ export class CoffeesController {
 
   @Post()
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
+    // 默认为 false
+    // 在 main.js 全局配置 transform: true 后自动转换为实例。
+    // console.log(createCoffeeDto instanceof CreateCoffeeDto);
     return this.coffeesService.create(createCoffeeDto);
   }
   @Patch(':id')

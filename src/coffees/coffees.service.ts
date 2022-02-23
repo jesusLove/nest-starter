@@ -17,8 +17,9 @@ export class CoffeesService {
   findOne(id: string) {
     return this.coffees.find((item) => item.id === +id);
   }
-  create(createCoffeeDto) {
-    return this.coffees.push(createCoffeeDto);
+  create(createCoffeeDto: any) {
+    this.coffees.push(createCoffeeDto);
+    return createCoffeeDto;
   }
   update(id: string, updateCoffeeData: any) {
     const existingCoffee = this.findOne(id);
